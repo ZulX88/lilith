@@ -1,8 +1,5 @@
-<div style="position: relative; overflow: hidden; height: 150px; border-radius: 15px; margin-bottom: 20px; background: linear-gradient(45deg, #6a11cb 0%, #2575fc 100%); padding: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.3);">
-  <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiPjxkZWZzPjxwYXR0ZXJuIGlkPSJwYXR0ZXJuIiB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHBhdHRlcm5Vbml0cz0idXNlclNwYWNlT25Vc2UiIHBhdHRlcm5UcmFuc2Zvcm09InJvdGF0ZSg0NSkiPjxjaXJjbGUgY3g9IjEwIiBjeT0iMTAiIHI9IjAuOSIgZmlsbD0id2hpdGUiIGZpbGwtb3BhY2l0eT0iMC4xIi8+PC9wYXR0ZXJuPjwvZGVmcz48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSJ1cmwoI3BhdHRlcm4pIi8+PC9zdmc+') repeat; opacity: 0.3;"></div>
-  <div style="position: relative; z-index: 2;">
-    <img src="https://readme-typing-svg.herokuapp.com?font=Architects+Daughter&size=40&duration=3000&pause=1000&color=FFFFFF&center=true&vCenter=true&multiline=true&width=600&height=100&lines=A+whisper+between+protocols;A+Powerful+WhatsApp+Bot+Project" alt="Typing SVG" />
-  </div>
+<div align="center">
+  <img src="https://readme-typing-svg.herokuapp.com?font=Architects+Daughter&size=40&duration=3000&pause=1000&color=F79F1F&center=true&vCenter=true&multiline=true&width=600&height=100&lines=A+whisper+between+protocols;A+Powerful+WhatsApp+Bot+Project" alt="Typing SVG" />
 </div>
 
 <div align="center">
@@ -15,31 +12,29 @@
   <em>A Cutting-Edge WhatsApp Bot Built with Python & Asynchronous Technology</em>
 </p>
 
-<div style="background: linear-gradient(135deg, rgba(247,159,31,0.1) 0%, rgba(155,89,182,0.1) 100%); padding: 15px; border-radius: 10px; border: 1px solid #F79F1F; margin: 10px 0;">
-  <div align="center">
-    <h3>📚 Message Serialization Documentation</h3>
-  </div>
-
-  The `serialize.py` module provides powerful message handling capabilities:
-
-  #### **Mess Class**
-  Handles incoming messages with properties like:
-
-  - `text`: Extracts message text content
-  - `is_media`: Checks if the message contains media
-  - `quoted`: Access to quoted/replied messages
-  - `mentioned_jid`: Gets mentioned user IDs
-  - `media_info`: Extracts detailed media information
-  - `reply()`: Reply to messages
-  - `react()`: React to messages with emojis
-
-  #### **QuotedMess Class**
-  Handles quoted/replied messages with:
-
-  - Media download capabilities
-  - Context information extraction
-  - Message type detection
+<div align="center">
+  <h3>📚 Message Serialization Documentation</h3>
 </div>
+
+The `serialize.py` module provides powerful message handling capabilities:
+
+#### **Mess Class**
+Handles incoming messages with properties like:
+
+- `text`: Extracts message text content
+- `is_media`: Checks if the message contains media
+- `quoted`: Access to quoted/replied messages
+- `mentioned_jid`: Gets mentioned user IDs
+- `media_info`: Extracts detailed media information
+- `reply()`: Reply to messages
+- `react()`: React to messages with emojis
+
+#### **QuotedMess Class**
+Handles quoted/replied messages with:
+
+- Media download capabilities
+- Context information extraction
+- Message type detection
 
 <p align="center">
   <img src="https://komarev.com/ghpvc/?username=ZulX88&label=Repository%20Views&color=blueviolet&style=flat-square" alt="Repository Views" />
