@@ -20,9 +20,9 @@
   
 [![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg?style=for-the-badge)](https://GitHub.com/Naereen/StrapDown.js/graphs/commit-activity)
 [![Python](https://img.shields.io/badge/Made%20with-Python-1f425f.svg?style=for-the-badge)](https://www.python.org/)
-[![License](https://img.shields.io/github/license/ZulX88/Shiro-Py?style=for-the-badge&logo=github&color=blue)](https://github.com/ZulX88/Shiro-Py/blob/main/LICENSE)
-[![Stars](https://img.shields.io/github/stars/ZulX88/Shiro-Py?style=for-the-badge&logo=github&color=f4db53)](https://github.com/ZulX88/Shiro-Py/stargazers)
-[![Issues](https://img.shields.io/github/issues/ZulX88/Shiro-Py?style=for-the-badge&logo=github&color=red)](https://github.com/ZulX88/Shiro-Py/issues)
+[![License](https://img.shields.io/github/license/ZulX88/lilith?style=for-the-badge&logo=github&color=blue)](https://github.com/ZulX88/lilith/blob/main/LICENSE)
+[![Stars](https://img.shields.io/github/stars/ZulX88/lilith?style=for-the-badge&logo=github&color=f4db53)](https://github.com/ZulX88/lilith/stargazers)
+[![Issues](https://img.shields.io/github/issues/ZulX88/lilith?style=for-the-badge&logo=github&color=red)](https://github.com/ZulX88/lilith/issues)
 
 </div>
 
@@ -135,8 +135,8 @@ Handles quoted/replied messages with:
   
 #### 🚀 Rapid Deployment
 ```bash
-git clone https://github.com/ZulX88/Shiro-Py.git
-cd Shiro-Py
+git clone https://github.com/ZulX88/lilith.git
+cd lilith
 pip install -r requirements.txt
 ```
 
@@ -146,8 +146,8 @@ pip install -r requirements.txt
 
 1. **Clone the Repository**
    ```bash
-   git clone https://github.com/ZulX88/Shiro-Py.git
-   cd Shiro-Py
+   git clone https://github.com/ZulX88/lilith.git
+   cd lilith
    ```
 
 2. **Install Dependencies**
@@ -203,7 +203,7 @@ BOT_NAME=Lilith Bot
 <div align="center">
   
 ```
-Shiro-Py/
+lilith/
 ├── main.py                 # 🖥️  Main bot entry point
 ├── gen.py                  # 🔐  Session generation script  
 ├── handler.py              # 🤖  Message handler
@@ -242,8 +242,8 @@ Shiro-Py/
 
 <div align="center">
   
-[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=for-the-badge)](https://github.com/ZulX88/Shiro-Py/pulls)
-[![Contributors](https://img.shields.io/github/contributors/ZulX88/Shiro-Py?style=for-the-badge&color=orange)](https://github.com/ZulX88/Shiro-Py/graphs/contributors)
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=for-the-badge)](https://github.com/ZulX88/lilith/pulls)
+[![Contributors](https://img.shields.io/github/contributors/ZulX88/lilith?style=for-the-badge&color=orange)](https://github.com/ZulX88/lilith/graphs/contributors)
 
 </div>
 
@@ -258,8 +258,8 @@ We warmly welcome your contributions! To contribute:
 <div align="center">
 
 ### 🌟 Contributors
-<a href="https://github.com/ZulX88/Shiro-Py/graphs/contributors">
-  <img src="https://contrib.rocks/image?repo=ZulX88/Shiro-Py" alt="Contributors" />
+<a href="https://github.com/ZulX88/lilith/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=ZulX88/lilith" alt="Contributors" />
 </a>
 
 </div>
@@ -334,7 +334,7 @@ If you find Lilith useful, consider supporting the project:
   
 ### 🌟 Thank You for Visiting!
 
-[![Stargazers repo roster for @ZulX88/Shiro-Py](https://reporoster.com/stars/ZulX88/Shiro-Py)](https://github.com/ZulX88/Shiro-Py/stargazers)
+[![Stargazers repo roster for @ZulX88/lilith](https://reporoster.com/stars/ZulX88/lilith)](https://github.com/ZulX88/lilith/stargazers)
   
 </div>
 
