@@ -150,6 +150,10 @@ Handles quoted/replied messages with:
 <div align="center">
   
 ### Environment Variables
+</div>
+
+<div align="center" style="background-color: #f8f8f8; padding: 15px; border-radius: 8px; border: 1px solid #ddd; margin: 10px 0;">
+
 ```env
 PREFIXES=/
 NAMEDB=db.sqlite3
@@ -159,34 +163,38 @@ BOT_NAME=Lilith Bot
 
 </div>
 
-| Variable | Description | Default |
-|----------|-------------|---------|
+<div align="center">
+
+| <kbd>Variable</kbd> | <b>Description</b> | <b>Default</b> |
+|:-------------------:|:-----------------:|:-------------:|
 | **PREFIXES** | Command prefixes for the bot | `/` |
 | **NAMEDB** | Database file name | `db.sqlite3` |
 | **OWNER** | Owner numbers (comma-separated) | `62xxx,84xxx` |
 | **BOT_NAME** | Display name for the bot | `Lilith Bot` |
 
+</div>
+
 ---
 
 ## 🗂️ Project Structure
 
-<div align="center">
-  
+<div align="center" style="background-color: #f5f5f5; padding: 15px; border-radius: 8px; border: 1px solid #ddd;">
+
 ```
 lilith/
-├── main.py                 # 🖥️  Main bot entry point
-├── gen.py                  # 🔐  Session generation script  
-├── handler.py              # 🤖  Message handler
-├── config.py               # ⚙️  Configuration settings
-├── requirements.txt        # 📦  Python dependencies
-├── .env.example           # 🔐  Environment variables template
-├── files/                 # 📁  Static files directory
-├── lib/                   # 🧩  Core library modules
-│   ├── serialize.py       # 📬  Message serialization
-│   └── scrape/            # 🌐  Scraping utilities
-└── plugins/               # 🔌  Bot plugins directory
-    ├── downloader/        # 📥  Download plugins
-    └── general/           # 🧩  General plugins
+├── main.py                # 🖥️  Main bot entry point
+├── gen.py                 # 🔐  Session generation script  
+├── handler.py             # 🤖  Message handler
+├── config.py              # ⚙️  Configuration settings
+├── requirements.txt       # 📦  Python dependencies
+├── .env.example          # 🔐  Environment variables template
+├── files/                # 📁  Static files directory
+├── lib/                  # 🧩  Core library modules
+│   ├── serialize.py      # 📬  Message serialization
+│   └── scrape/           # 🌐  Scraping utilities
+└── plugins/              # 🔌  Bot plugins directory
+    ├── downloader/       # 📥  Download plugins
+    └── general/          # 🧩  General plugins
 ```
 
 </div>
