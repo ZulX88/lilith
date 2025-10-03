@@ -1,0 +1,5 @@
+beautifulsoup4
+requests
+termcolor
+git+https://github.com/ZulX88/neonize@patch-1
+dotenv
