@@ -15,7 +15,7 @@ plugin={
     "name":"Add member",
     "command":"add",
     "category":"group",
-    "admin":True,
+    "owner":True,
     "botAdmin":True,
     "exec":execute
 }
