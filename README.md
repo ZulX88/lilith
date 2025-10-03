@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="https://readme-typing-svg.herokuapp.com?font=Architects+Daughter&size=40&duration=3000&pause=1000&color=FF0000&center=true&vCenter=true&multiline=true&width=600&height=100&lines=A+whisper+between+protocols;A+Powerful+WhatsApp+Bot+Project" alt="Typing SVG" />
+  <img src="https://readme-typing-svg.herokuapp.com?font=Architects+Daughter&size=40&duration=3000&pause=1000&color=FF0000&center=true&vCenter=true&multiline=true&width=600&height=100&lines=A+whisper+between+protocols;" alt="Typing SVG" />
 </div>
 
 <br>
@@ -81,6 +81,7 @@ Lilith is an advanced WhatsApp bot meticulously crafted with Python and asynchro
 
 ### Prerequisites
 <div align="center">
+  
 [![Python Version](https://img.shields.io/badge/Python-3.8%2B-blue?style=for-the-badge&logo=python&logoColor=white)](https://www.python.org/downloads/)
 [![pip](https://img.shields.io/badge/pip-21.0%2B-blue?style=for-the-badge&logo=pip&logoColor=white)](https://pip.pypa.io/en/stable/)
 
