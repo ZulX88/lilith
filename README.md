@@ -76,35 +76,11 @@ Lilith is an advanced WhatsApp bot meticulously crafted with Python and asynchro
 
 ---
 
-### Message Serialization (`lib/serialize.py`)
-
-The `serialize.py` module provides powerful message handling capabilities:
-
-#### **Mess Class**
-Handles incoming messages with properties like:
-
-- `text`: Extracts message text content
-- `is_media`: Checks if the message contains media
-- `quoted`: Access to quoted/replied messages
-- `mentioned_jid`: Gets mentioned user IDs
-- `media_info`: Extracts detailed media information
-- `reply()`: Reply to messages
-- `react()`: React to messages with emojis
-
-#### **QuotedMess Class**
-Handles quoted/replied messages with:
-
-- Media download capabilities
-- Context information extraction
-- Message type detection
-
----
 
 ## 📚 Quick Start
 
-<div align="center">
-  
 ### Prerequisites
+<div align="center">
 [![Python Version](https://img.shields.io/badge/Python-3.8%2B-blue?style=for-the-badge&logo=python&logoColor=white)](https://www.python.org/downloads/)
 [![pip](https://img.shields.io/badge/pip-21.0%2B-blue?style=for-the-badge&logo=pip&logoColor=white)](https://pip.pypa.io/en/stable/)
 
@@ -147,10 +123,7 @@ Handles quoted/replied messages with:
 
 ## ⚙️ Configuration
 
-<div align="center">
-  
 ### Environment Variables
-</div>
 
 ```env
 PREFIXES=/
@@ -243,15 +216,9 @@ We warmly welcome your contributions! To contribute:
 
 ## 🙏 Acknowledgments
 
-<div align="center">
-  
 - Special thanks to [@Nubuki-all](https://github.com/Nubuki-all) for the [amazing documentation](https://nubuki-all.github.io/neonize)! 🙏
 - Inspired by the open-source community and developers worldwide 💙
 - Built with [neonize](https://github.com/krypton-byte/neonize) framework 🚀
-
-</div>
-
-</div>
 
 ---
 
@@ -268,12 +235,11 @@ We warmly welcome your contributions! To contribute:
 
 ---
 
-## 💰 Support the Project
+## 💰 Donation
 
 <div align="center">
   
-If you find Lilith useful, consider supporting the project:
-  
+Buy me a coffee:
 [<img src="https://img.shields.io/badge/Saweria-FFA500?style=for-the-badge&logo=Buy+Me+A+Coffee&logoColor=white" alt="Saweria">](https://saweria.co/zhansetya)
 [<img src="https://img.shields.io/badge/Ko--fi-F16061?style=for-the-badge&logo=ko-fi&logoColor=white" alt="Ko-fi">](https://ko-fi.com/zhansetya)
 
