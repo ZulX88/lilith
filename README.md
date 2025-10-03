@@ -1,23 +1,15 @@
 <div align="center">
-  <img src="https://readme-typing-svg.herokuapp.com?font=Architects+Daughter&size=40&duration=3000&pause=1000&color=F79F1F&center=true&vCenter=true&multiline=true&width=600&height=100&lines=A+whisper+between+protocols;ShiroPy2+A+Revolution+in+Bot+Development" alt="Typing SVG" />
+  <img src="https://readme-typing-svg.herokuapp.com?font=Architects+Daughter&size=40&duration=3000&pause=1000&color=F79F1F&center=true&vCenter=true&multiline=true&width=600&height=100&lines=A+whisper+between+protocols;A+Powerful+WhatsApp+Bot+Project" alt="Typing SVG" />
 </div>
 
 <div align="center">
-  <img src="files/lilith.jpg" alt="ShiroPy2 Logo" width="250" height="250" style="border-radius: 50%; border: 5px solid #F79F1F; box-shadow: 0 0 30px rgba(247, 159, 31, 0.7); animation: rotate 20s linear infinite;"/>
+  <img src="files/lilith.jpg" alt="Lilith Logo" width="200" height="200" style="border-radius: 50%; border: 4px solid #F79F1F; box-shadow: 0 0 20px rgba(247, 159, 31, 0.5);"/>
 </div>
 
-<style>
-@keyframes rotate {
-  0% { transform: rotate(0deg) scale(1); }
-  50% { transform: rotate(180deg) scale(1.05); }
-  100% { transform: rotate(360deg) scale(1); }
-}
-</style>
-
-<h1 align="center">🤖 ShiroPy2 - Advanced Bot Framework </h1>
+<h1 align="center">🤖 Lilith - WhatsApp Bot </h1>
 
 <p align="center">
-  <em>A whisper between protocols - Advanced Bot Framework Built with Python & Asynchronous Technology</em>
+  <em>A Cutting-Edge WhatsApp Bot Built with Python & Asynchronous Technology</em>
 </p>
 
 <p align="center">
@@ -26,68 +18,47 @@
 
 <div align="center">
   
-![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green?style=for-the-badge&logo=github)
-![Python](https://img.shields.io/badge/Made%20with-Python-1f425f?style=for-the-badge&logo=python)
-![License](https://img.shields.io/github/license/ZulX88/ShiroPy2?style=for-the-badge&logo=github&color=blue)
-![Stars](https://img.shields.io/github/stars/ZulX88/ShiroPy2?style=for-the-badge&logo=github&color=f4db53)
-![Issues](https://img.shields.io/github/issues/ZulX88/ShiroPy2?style=for-the-badge&logo=github&color=red)
-![Forks](https://img.shields.io/github/forks/ZulX88/ShiroPy2?style=for-the-badge&logo=github&color=success)
-![Contributors](https://img.shields.io/github/contributors/ZulX88/ShiroPy2?style=for-the-badge&logo=github&color=purple)
+[![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg?style=for-the-badge)](https://GitHub.com/Naereen/StrapDown.js/graphs/commit-activity)
+[![Python](https://img.shields.io/badge/Made%20with-Python-1f425f.svg?style=for-the-badge)](https://www.python.org/)
+[![License](https://img.shields.io/github/license/ZulX88/lilith?style=for-the-badge&logo=github&color=blue)](https://github.com/ZulX88/lilith/blob/main/LICENSE)
+[![Stars](https://img.shields.io/github/stars/ZulX88/lilith?style=for-the-badge&logo=github&color=f4db53)](https://github.com/ZulX88/lilith/stargazers)
+[![Issues](https://img.shields.io/github/issues/ZulX88/lilith?style=for-the-badge&logo=github&color=red)](https://github.com/ZulX88/lilith/issues)
 
 </div>
 
 ---
 
-## 🌟 About ShiroPy2
+## 🌟 About Lilith
 
 <div align="center">
-  <img src="https://readme-typing-svg.herokuapp.com?font=JetBrains+Mono&size=20&duration=4000&pause=1000&color=00D17A&center=true&vCenter=true&repeat=false&width=600&height=30&lines=A+whisper+between+protocols" alt="About ShiroPy2" />
+  <img src="https://readme-typing-svg.herokuapp.com?font=JetBrains+Mono&size=20&duration=4000&pause=1000&color=00D17A&center=true&vCenter=true&repeat=false&width=600&height=30&lines=Effortlessly+automate+your+WhatsApp+experience+with+Lilith" alt="About Lilith" />
 </div>
 
-ShiroPy2 is an advanced bot framework meticulously crafted with Python and asynchronous technology for optimal performance. Designed to revolutionize your automation experience, this framework combines cutting-edge functionality with elegant design. A whisper between protocols, connecting you with seamless integration.
+Lilith is an advanced WhatsApp bot meticulously crafted with Python and asynchronous technology for optimal performance. Designed to revolutionize your WhatsApp automation experience, this bot combines cutting-edge functionality with elegant design.
+
+### ✨ Key Features
 
 ### ✨ Key Features
 
 <div align="center">
   
-<table>
-  <tr>
-    <td align="center" width="33%"><div><h3>🚀 Performance</h3></div></td>
-    <td align="center" width="33%"><div><h3>🔧 Customization</h3></div></td>
-    <td align="center" width="33%"><div><h3>📱 Integration</h3></div></td>
-  </tr>
-  <tr>
-    <td align="center">Asynchronous architecture for lightning-fast responses</td>
-    <td align="center">Modular design for easy customization</td>
-    <td align="center">Seamless API integration</td>
-  </tr>
-  <tr>
-    <td align="center" width="33%"><h3>⚡ Responsiveness</h3></td>
-    <td align="center" width="33%"><h3>📥 Media Handling</h3></td>
-    <td align="center" width="33%"><h3>🔐 Security</h3></td>
-  </tr>
-  <tr>
-    <td align="center">Real-time processing with minimal latency</td>
-    <td align="center">Advanced media processing capabilities</td>
-    <td align="center">Secure environment configuration</td>
-  </tr>
-</table>
+| 🚀 **Performance** | 🔧 **Customization** | 📱 **Integration** |
+|:---:|:---:|:---:|
+| Asynchronous architecture for lightning-fast responses | Modular design for easy customization | Seamless WhatsApp API integration |
+
+| ⚡ **Responsiveness** | 📥 **Media Handling** | 🔐 **Security** |
+|:---:|:---:|:---:|
+| Real-time processing with minimal latency | Advanced media processing capabilities | Secure environment configuration |
 
 </div>
 
-### <kbd>🎯</kbd> Core Capabilities
+### 🎯 Core Capabilities
 
-<div align="center">
-
-| <kbd>💬</kbd> **Message Processing** | <kbd>📁</kbd> **Media Management** | <kbd>🗄️</kbd> **Database Integration** |
-|:-----------------------------------:|:---------------------------------:|:-------------------------------------:|
-| Sophisticated message parsing and handling | Advanced media upload and download capabilities | Robust SQLite and PostgreSQL support |
-
-| <kbd>⚙️</kbd> **Event Handling** | <kbd>🔌</kbd> **Plugin System** | <kbd>🌐</kbd> **Protocol Whisper** |
-|:------------------------------:|:------------------------------:|:-------------------------------:|
-| Comprehensive event-driven architecture | Extensible plugin architecture for easy feature additions | A whisper between protocols for seamless communication |
-
-</div>
+- **Message Processing**: Sophisticated message parsing and handling
+- **Media Management**: Advanced media upload and download capabilities  
+- **Database Integration**: Robust SQLite and PostgreSQL support
+- **Event Handling**: Comprehensive event-driven architecture
+- **Plugin System**: Extensible plugin architecture for easy feature additions
 
 ---
 
@@ -166,8 +137,8 @@ Handles quoted/replied messages with:
   
 #### 🚀 Rapid Deployment
 ```bash
-git clone https://github.com/ZulX88/ShiroPy2.git
-cd ShiroPy2
+git clone https://github.com/ZulX88/lilith.git
+cd lilith
 pip install -r requirements.txt
 ```
 
@@ -177,8 +148,8 @@ pip install -r requirements.txt
 
 1. **Clone the Repository**
    ```bash
-   git clone https://github.com/ZulX88/ShiroPy2.git
-   cd ShiroPy2
+   git clone https://github.com/ZulX88/lilith.git
+   cd lilith
    ```
 
 2. **Install Dependencies**
@@ -210,27 +181,22 @@ pip install -r requirements.txt
 
 <div align="center">
   
-### <kbd>⚙️</kbd> Environment Variables
-
-<div align="center">
-  
+### Environment Variables
 ```env
 PREFIXES=/
 NAMEDB=db.sqlite3
 OWNER=62xxx,84xxx
-BOT_NAME=ShiroPy2 Bot
+BOT_NAME=Lilith Bot
 ```
 
 </div>
 
-| <kbd>🔧</kbd> **Variable** | **Description** | **Example** |
-|:--------------------------:|:---------------:|:-----------:|
+| Variable | Description | Default |
+|----------|-------------|---------|
 | **PREFIXES** | Command prefixes for the bot | `/` |
 | **NAMEDB** | Database file name | `db.sqlite3` |
 | **OWNER** | Owner numbers (comma-separated) | `62xxx,84xxx` |
-| **BOT_NAME** | Display name for the bot | `ShiroPy2 Bot` |
-
-</div>
+| **BOT_NAME** | Display name for the bot | `Lilith Bot` |
 
 ---
 
@@ -239,8 +205,8 @@ BOT_NAME=ShiroPy2 Bot
 <div align="center">
   
 ```
-ShiroPy2/
-├── main.py                 # 🖥️  Main framework entry point
+lilith/
+├── main.py                 # 🖥️  Main bot entry point
 ├── gen.py                  # 🔐  Session generation script  
 ├── handler.py              # 🤖  Message handler
 ├── config.py               # ⚙️  Configuration settings
@@ -263,35 +229,12 @@ ShiroPy2/
 
 <div align="center">
   
-### <kbd>🔌</kbd> Available Plugins
-
-<table>
-  <tr>
-    <th>Plugin Category</th>
-    <th>Functionality</th>
-    <th>Status</th>
-  </tr>
-  <tr>
-    <td align="center"><kbd>📥</kbd> <strong>Downloader</strong></td>
-    <td>Media download capabilities</td>
-    <td align="center">✅ <em>Active</em></td>
-  </tr>
-  <tr>
-    <td align="center"><kbd>🧩</kbd> <strong>General</strong></td>
-    <td>Basic bot commands</td>
-    <td align="center">✅ <em>Active</em></td>
-  </tr>
-  <tr>
-    <td align="center"><kbd>🎵</kbd> <strong>Music</strong></td>
-    <td>Music search and download</td>
-    <td align="center">🔄 <em>Coming Soon</em></td>
-  </tr>
-  <tr>
-    <td align="center"><kbd>🤖</kbd> <strong>AI</strong></td>
-    <td>Artificial intelligence features</td>
-    <td align="center">🔄 <em>Coming Soon</em></td>
-  </tr>
-</table>
+| Plugin Category | Functionality | Status |
+|----------------|---------------|--------|
+| 📥 **Downloader** | Media download capabilities | ✅ Active |
+| 🧩 **General** | Basic bot commands | ✅ Active |
+| 🎵 **Music** | Music search and download | 🔄 Coming Soon |
+| 🤖 **AI** | Artificial intelligence features | 🔄 Coming Soon |
 
 </div>
 
@@ -301,8 +244,8 @@ ShiroPy2/
 
 <div align="center">
   
-[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=for-the-badge)](https://github.com/ZulX88/ShiroPy2/pulls)
-[![Contributors](https://img.shields.io/github/contributors/ZulX88/ShiroPy2?style=for-the-badge&color=orange)](https://github.com/ZulX88/ShiroPy2/graphs/contributors)
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=for-the-badge)](https://github.com/ZulX88/lilith/pulls)
+[![Contributors](https://img.shields.io/github/contributors/ZulX88/lilith?style=for-the-badge&color=orange)](https://github.com/ZulX88/lilith/graphs/contributors)
 
 </div>
 
@@ -314,13 +257,11 @@ We warmly welcome your contributions! To contribute:
 4. **Push** to the branch (`git push origin feature/AmazingFeature`)
 5. **Open** a Pull Request
 
-Join us in developing "A whisper between protocols" - making bot automation more elegant and efficient.
-
 <div align="center">
 
 ### 🌟 Contributors
-<a href="https://github.com/ZulX88/ShiroPy2/graphs/contributors">
-  <img src="https://contrib.rocks/image?repo=ZulX88/ShiroPy2" alt="Contributors" />
+<a href="https://github.com/ZulX88/lilith/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=ZulX88/lilith" alt="Contributors" />
 </a>
 
 </div>
@@ -354,7 +295,7 @@ Join us in developing "A whisper between protocols" - making bot automation more
 - Special thanks to [@Nubuki-all](https://github.com/Nubuki-all) for the [amazing documentation](https://nubuki-all.github.io/neonize)! 🙏
 - Inspired by the open-source community and developers worldwide 💙
 - Built with [neonize](https://github.com/krypton-byte/neonize) framework 🚀
-- "A whisper between protocols" - connecting technologies seamlessly
+
 </div>
 
 </div>
@@ -396,7 +337,7 @@ If you find Lilith useful, consider supporting the project:
   
 ### 🌟 Thank You for Visiting!
 
-[![Stargazers repo roster for @ZulX88/ShiroPy2](https://reporoster.com/stars/ZulX88/ShiroPy2)](https://github.com/ZulX88/ShiroPy2/stargazers)
+[![Stargazers repo roster for @ZulX88/lilith](https://reporoster.com/stars/ZulX88/lilith)](https://github.com/ZulX88/lilith/stargazers)
   
 </div>
 
@@ -416,5 +357,5 @@ If you find Lilith useful, consider supporting the project:
 </div>
 
 <p align="center">
-  Made with ❤️ by <a href="https://github.com/ZulX88">ZulX88</a> | 🤖 ShiroPy2 - A whisper between protocols
+  Made with ❤️ by <a href="https://github.com/ZulX88">ZulX88</a> | 🤖 Lilith Bot - Your Ultimate WhatsApp Assistant
 </p>
