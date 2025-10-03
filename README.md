@@ -183,10 +183,7 @@ lilith/
 ├── files/                 # 📁  Static files directory
 ├── lib/                   # 🧩  Core library modules
 │   ├── serialize.py       # 📬  Message serialization
-│   └── scrape/            # 🌐  Scraping utilities
 └── plugins/               # 🔌  Bot plugins directory
-    ├── downloader/        # 📥  Download plugins
-    └── general/           # 🧩  General plugins
 ```
 
 </div>
