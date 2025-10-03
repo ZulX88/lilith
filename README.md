@@ -152,16 +152,12 @@ Handles quoted/replied messages with:
 ### Environment Variables
 </div>
 
-<div align="center" style="background-color: #f8f8f8; padding: 15px; border-radius: 8px; border: 1px solid #ddd; margin: 10px 0;">
-
 ```env
 PREFIXES=/
 NAMEDB=db.sqlite3
 OWNER=62xxx,84xxx
 BOT_NAME=Lilith Bot
 ```
-
-</div>
 
 <div align="center">
 
@@ -177,8 +173,6 @@ BOT_NAME=Lilith Bot
 ---
 
 ## 🗂️ Project Structure
-
-<div align="center" style="background-color: #f5f5f5; padding: 15px; border-radius: 8px; border: 1px solid #ddd;">
 
 ```
 lilith/
@@ -197,7 +191,6 @@ lilith/
     └── general/          # 🧩  General plugins
 ```
 
-</div>
 
 ---
 
