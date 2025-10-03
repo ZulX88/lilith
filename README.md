@@ -1,51 +1,31 @@
 <div align="center">
-  <img src="https://readme-typing-svg.herokuapp.com?font=Architects+Daughter&size=40&duration=3000&pause=1000&color=F79F1F&center=true&vCenter=true&multiline=true&width=600&height=100&lines=A+whisper+between+protocols;A+Powerful+WhatsApp+Bot+Project" alt="Typing SVG" />
+  <img src="https://readme-typing-svg.herokuapp.com?font=Architects+Daughter&size=40&duration=3000&pause=1000&color=FF0000&center=true&vCenter=true&multiline=true&width=600&height=100&lines=A+whisper+between+protocols;A+Powerful+WhatsApp+Bot+Project" alt="Typing SVG" />
 </div>
 
+<br>
+
 <div align="center">
-  <img src="files/lilith.jpg" alt="Lilith Logo" width="200" height="200" style="border-radius: 50%; border: 4px solid #F79F1F; box-shadow: 0 0 20px rgba(247, 159, 31, 0.5);"/>
+  <img src="files/lilith.jpg" alt="Lilith Logo" width="200" height="200" style="border-radius: 50%; border: 4px solid #000000; box-shadow: 0 0 25px rgba(0, 0, 0, 0.7); margin: 20px 0;"/>
 </div>
 
 <h1 align="center">🤖 Lilith - WhatsApp Bot </h1>
 
 <p align="center">
-  <em>A Cutting-Edge WhatsApp Bot Built with Python & Asynchronous Technology</em>
+  <em style="color: #000000; background: linear-gradient(to right, #ff0000, #000000); -webkit-background-clip: text; -webkit-text-fill-color: transparent; font-weight: bold;">A Cutting-Edge WhatsApp Bot Built with Python & Asynchronous Technology</em>
 </p>
 
-<div align="center">
-  <h3>📚 Message Serialization Documentation</h3>
-</div>
 
-The `serialize.py` module provides powerful message handling capabilities:
-
-#### **Mess Class**
-Handles incoming messages with properties like:
-
-- `text`: Extracts message text content
-- `is_media`: Checks if the message contains media
-- `quoted`: Access to quoted/replied messages
-- `mentioned_jid`: Gets mentioned user IDs
-- `media_info`: Extracts detailed media information
-- `reply()`: Reply to messages
-- `react()`: React to messages with emojis
-
-#### **QuotedMess Class**
-Handles quoted/replied messages with:
-
-- Media download capabilities
-- Context information extraction
-- Message type detection
 
 <p align="center">
   <img src="https://komarev.com/ghpvc/?username=ZulX88&label=Repository%20Views&color=blueviolet&style=flat-square" alt="Repository Views" />
 </p>
 
-<div align="center">
-  
-[![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg?style=for-the-badge)](https://GitHub.com/Naereen/StrapDown.js/graphs/commit-activity)
-[![Python](https://img.shields.io/badge/Made%20with-Python-1f425f.svg?style=for-the-badge)](https://www.python.org/)
-[![License](https://img.shields.io/github/license/ZulX88/lilith?style=for-the-badge&logo=github&color=blue)](https://github.com/ZulX88/lilith/blob/main/LICENSE)
-[![Stars](https://img.shields.io/github/stars/ZulX88/lilith?style=for-the-badge&logo=github&color=f4db53)](https://github.com/ZulX88/lilith/stargazers)
+<div align="center" style="background: linear-gradient(135deg, #000000 0%, #333333 50%, #ff0000 100%); padding: 15px; border-radius: 10px; margin: 15px 0;">
+
+[![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-red.svg?style=for-the-badge)](https://GitHub.com/Naereen/StrapDown.js/graphs/commit-activity)
+[![Python](https://img.shields.io/badge/Made%20with-Python-black.svg?style=for-the-badge)](https://www.python.org/)
+[![License](https://img.shields.io/github/license/ZulX88/lilith?style=for-the-badge&logo=github&color=red)](https://github.com/ZulX88/lilith/blob/main/LICENSE)
+[![Stars](https://img.shields.io/github/stars/ZulX88/lilith?style=for-the-badge&logo=github&color=white)](https://github.com/ZulX88/lilith/stargazers)
 [![Issues](https://img.shields.io/github/issues/ZulX88/lilith?style=for-the-badge&logo=github&color=red)](https://github.com/ZulX88/lilith/issues)
 
 </div>
@@ -53,10 +33,6 @@ Handles quoted/replied messages with:
 ---
 
 ## 🌟 About Lilith
-
-<div align="center">
-  <img src="https://readme-typing-svg.herokuapp.com?font=JetBrains+Mono&size=20&duration=4000&pause=1000&color=00D17A&center=true&vCenter=true&repeat=false&width=600&height=30&lines=Effortlessly+automate+your+WhatsApp+experience+with+Lilith" alt="About Lilith" />
-</div>
 
 Lilith is an advanced WhatsApp bot meticulously crafted with Python and asynchronous technology for optimal performance. Designed to revolutionize your WhatsApp automation experience, this bot combines cutting-edge functionality with elegant design.
 
