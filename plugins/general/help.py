@@ -13,7 +13,7 @@ async def execute(client, m, prefix, **kwargs):
             continue
         seen.add(main_cmd)
 
-        cat = cmd_data.get("category", "uncategorized")
+        cat = cmd_data.get("category", "uncategorized").upper()
         if cat not in categorized:
             categorized[cat] = []
         categorized[cat].append(cmd_data)

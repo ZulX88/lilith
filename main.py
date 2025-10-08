@@ -120,7 +120,7 @@ async def on_pair_status(_: NewAClient, message: PairStatusEv):
     
 # --- Main Function ---
 async def connect():
-    load_plugins()  # <-- load plugins, bukan commands
+    load_plugins()  
     await client.connect()
     await client.idle() 
 
@@ -128,4 +128,4 @@ if __name__ == "__main__":
     try:
         client.loop.run_until_complete(connect())
     except KeyboardInterrupt:
-        print("\n👋 Program dihentikan manual.")
+        print("\n👋 Program dihentikan.")
