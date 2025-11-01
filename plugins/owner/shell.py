@@ -6,7 +6,7 @@ async def execute(client, m, body, is_owner, **kwargs):
             return await m.reply("Only owner!")
         command = body[1:].strip()
         process = await asyncio.create_subprocess_shell(
-            f"zsh -c {repr(command)}",
+            f"{repr(command)}",
             stdout=asyncio.subprocess.PIPE,
             stderr=asyncio.subprocess.PIPE,
         )
