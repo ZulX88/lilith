@@ -1,6 +1,4 @@
 from lib.scrape import threads
-from handler import log_exception
-
 
 async def execute(client, m, text, **kwargs):
   
@@ -39,7 +37,6 @@ async def execute(client, m, text, **kwargs):
         await m.react("✅")
         
     except Exception as e:
-        await log_exception(m, e)
         await m.reply(f"*Terjadi error:* `{str(e)}`")
         await m.react("❌")
 
