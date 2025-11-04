@@ -41,7 +41,9 @@ async def handler(client, message):
         is_owner = await check_owner(m.sender)
         is_admin = False
         isBotAdmin = False
-
+        
+        if config.public == False and not is_owner:
+          return
         if not is_owner and not is_group:
             return
 
