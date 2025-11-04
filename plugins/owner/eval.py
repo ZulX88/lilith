@@ -137,13 +137,13 @@ async def eval_message(m: Mess, cmd: str, client: NewAClient):
             pass
           
 async def execute(client,m,is_owner,text,body,**kwargs):
-    if body.startswith("=>"):
+    if body.startswith("×>"):
         if not is_owner:
             await client.send_message(m.chat, "❌ Only owner can use eval!")
             return
         cmd = body[2:].strip()
         if not cmd:
-            await client.send_message(m.chat, "❌ Please provide code to evaluate. Usage: `!=> print('Hello')`")
+            await client.send_message(m.chat, "❌ Please provide code to evaluate. Usage: `=> print('Hello')`")
             return
         try:
             await eval_message(m, cmd, client)
