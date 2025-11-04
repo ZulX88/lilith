@@ -9,7 +9,7 @@ async def execute(client,m,text,prefix,command,**kwargs):
   
 plugin={
   "name": "Set permission of bot",
-  "command": "set}",
+  "command": "set",
   "is_owner":True,
   "category":"owner",
   "exec":execute
