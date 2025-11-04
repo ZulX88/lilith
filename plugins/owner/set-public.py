@@ -11,5 +11,6 @@ plugin={
   "name": "Set permission of bot",
   "command": "set}",
   "is_owner":True,
-  "category":"owner"
+  "category":"owner",
+  "exec":execute
 }
