@@ -2,6 +2,10 @@ import os
 import tempfile
 import yt_dlp
 from youtubesearchpython import VideosSearch
+from dotenv import load_dotenv
+
+# Load environment variables
+load_dotenv()
 
 async def execute(client, m, text, **kwargs):
     if not text:
@@ -42,7 +46,8 @@ async def execute(client, m, text, **kwargs):
             'audioformat': 'mp3',
         }
         
-        cookies_path = os.path.join('lib', 'cookies.txt')
+        # Check if cookies file exists using environment variable
+        cookies_path = os.getenv('YT_COOKIES_PATH', os.path.join('lib', 'cookies.txt'))
         if os.path.exists(cookies_path):
             ydl_opts['cookiefile'] = cookies_path
         
@@ -87,7 +92,7 @@ async def execute(client, m, text, **kwargs):
 plugin = {
     "name": "Play Audio YouTube",
     "command": "play-audio",
-    "alias": ["play", "playaudio", "ytplay",],
+    "alias": ["play", "playaudio", "ytplay", "ytaudio"],
     "category": "downloader",
     "exec": execute
 }
