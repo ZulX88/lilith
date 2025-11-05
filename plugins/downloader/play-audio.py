@@ -13,8 +13,8 @@ async def execute(client, m, text, **kwargs):
     await m.react("🔍")
     
     try:
-        search = await VideosSearch(text, limit=1)
-        results = search.result()
+        search = VideosSearch(text, limit=1)
+        results = await search.next()
         
         if not results['result']:
             await m.reply("❌ Video tidak ditemukan!")
