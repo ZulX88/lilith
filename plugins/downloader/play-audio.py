@@ -36,7 +36,7 @@ async def execute(client, m, text, **kwargs):
                 
         await client.send_message(m.chat, info_text, link_preview=True, quoted=m)
         
-        async with https AsyncClient(headers={"X-Api-Key":config.apikeys["nauval"]}) as client:
+        async with httpx.AsyncClient(headers={"X-Api-Key":config.apikeys["nauval"]}) as client:
             response = client.get(f"https://ytdlpyton.nvlgroup.my.id/download/audio?url={video_url}").json()
         
         await client.send_audio(m.chat, response["download_url"], quoted=m.message)
