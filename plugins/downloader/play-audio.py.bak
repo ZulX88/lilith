@@ -3,7 +3,6 @@ import tempfile
 import yt_dlp
 from py_yt import VideosSearch
 from dotenv import load_dotenv
-from neonize.utils.ffmpeg import AFFmpeg
 
 load_dotenv()
 
@@ -29,12 +28,22 @@ async def execute(client, m, text, **kwargs):
         duration = video.get('duration', 'Unknown')
         views = video.get('viewCount', {}).get('short', 'Unknown')
         
-        # Download audio m4a saja (lebih ringan dari video)
         ydl_opts = {
-            'format': 'bestaudio[ext=m4a]/bestaudio/best',  # Prioritaskan m4a
+            'format': 'bestaudio/best',
             'outtmpl': os.path.join(tempfile.gettempdir(), '%(title)s.%(ext)s'),
-            'noplaylist': True,
-            'quiet': True,
+            'postprocessors': [{
+                'key': 'FFmpegExtractAudio',
+                'preferredcodec': 'mp3',
+                'preferredquality': '192',
+            }],
+            'postprocessor_args': [
+                '-ar', '44100',
+            ],
+            'prefer_ffmpeg': True,
+            'audioquality': '0',
+            'extractaudio': True,
+            'audioformat': 'mp3',
+            'noproxy': True,
         }
         
         cookies_path = os.getenv('YT_COOKIES_PATH', os.path.join('lib', 'cookies.txt'))
@@ -43,35 +52,26 @@ async def execute(client, m, text, **kwargs):
         
         await m.react("⏳")
         
-        audio_path = None
         try:
-            # Download audio m4a
             with yt_dlp.YoutubeDL(ydl_opts) as ydl:
                 info = ydl.extract_info(video_url, download=True)
-                audio_path = ydl.prepare_filename(info)
+                audio_path = os.path.join(tempfile.gettempdir(), f"{info['title']}.mp3")
                 
                 if not os.path.exists(audio_path):
-                    raise FileNotFoundError(f"Audio file not found: {audio_path}")
-            
-            # Read file as bytes
-            with open(audio_path, 'rb') as f:
-                audio_bytes = f.read()
-            
-            # Convert to MP3 using AFFmpeg
-            async with AFFmpeg(audio_bytes) as ffmpeg:
-                mp3_bytes = await ffmpeg.to_mp3()
-            
-            # Save MP3 temporarily
-            mp3_path = os.path.join(tempfile.gettempdir(), f"{info['title']}.mp3")
-            with open(mp3_path, 'wb') as f:
-                f.write(mp3_bytes)
+                    original_filename = ydl.prepare_filename(info)
+                    audio_path = original_filename.rsplit('.', 1)[0] + '.mp3'
+        except TypeError as e:
+            if 'proxies' in str(e):
+                ydl_opts.pop('proxy', None)
+                with yt_dlp.YoutubeDL(ydl_opts) as ydl:
+                    info = ydl.extract_info(video_url, download=True)
+                    audio_path = os.path.join(tempfile.gettempdir(), f"{info['title']}.mp3")
                     
-        except Exception as e:
-            await m.reply(f"❌ Gagal mendownload: {str(e)}")
-            await m.react("❌")
-            if audio_path and os.path.exists(audio_path):
-                os.remove(audio_path)
-            return
+                    if not os.path.exists(audio_path):
+                        original_filename = ydl.prepare_filename(info)
+                        audio_path = original_filename.rsplit('.', 1)[0] + '.mp3'
+            else:
+                raise e
                 
         info_text = f"🎵 *Judul:* {title}\n"
         info_text += f"📺 *Channel:* {channel}\n"
@@ -83,14 +83,10 @@ async def execute(client, m, text, **kwargs):
         
         await client.send_message(m.chat, info_text, link_preview=True, quoted=m)
         
-        await client.send_audio(m.chat, mp3_path, quoted=m.message)
+        await client.send_audio(m.chat, audio_path, quoted=m.message)
         
-        # Cleanup
         try:
-            if audio_path and os.path.exists(audio_path):
-                os.remove(audio_path)
-            if os.path.exists(mp3_path):
-                os.remove(mp3_path)
+            os.remove(audio_path)
         except:
             pass  
         
@@ -99,6 +95,11 @@ async def execute(client, m, text, **kwargs):
     except Exception as e:
         await m.reply(f"❌ Terjadi kesalahan: {str(e)}")
         await m.react("❌")
+        try:
+            if 'audio_path' in locals() and os.path.exists(audio_path):
+                os.remove(audio_path)
+        except:
+            pass
 
 plugin = {
     "name": "Play Audio YouTube",
