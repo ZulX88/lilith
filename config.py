@@ -5,7 +5,7 @@ env_path = find_dotenv()
 load_dotenv(env_path)
 
 apikeys={
-  "nauval"=os.getenv("NAUVAL_APIKEY", "")
+  "nauval":os.getenv("NAUVAL_APIKEY", "")
 }
 public : bool = False
 prefix = os.getenv("PREFIXES", "!").split(",")
