@@ -1,11 +1,6 @@
-import os
-import tempfile
-import yt_dlp
 from py_yt import VideosSearch
-from dotenv import load_dotenv
-from neonize.utils.ffmpeg import AFFmpeg
-
-load_dotenv()
+import httpx
+import config
 
 async def execute(client, m, text, **kwargs):
     if not text:
@@ -29,49 +24,7 @@ async def execute(client, m, text, **kwargs):
         duration = video.get('duration', 'Unknown')
         views = video.get('viewCount', {}).get('short', 'Unknown')
         
-        # Download audio m4a saja (lebih ringan dari video)
-        ydl_opts = {
-            'format': 'bestaudio[ext=m4a]/bestaudio/best',  # Prioritaskan m4a
-            'outtmpl': os.path.join(tempfile.gettempdir(), '%(title)s.%(ext)s'),
-            'noplaylist': True,
-            'quiet': True,
-        }
-        
-        cookies_path = os.getenv('YT_COOKIES_PATH', os.path.join('lib', 'cookies.txt'))
-        if os.path.exists(cookies_path):
-            ydl_opts['cookiefile'] = cookies_path
-        
         await m.react("⏳")
-        
-        audio_path = None
-        try:
-            # Download audio m4a
-            with yt_dlp.YoutubeDL(ydl_opts) as ydl:
-                info = ydl.extract_info(video_url, download=True)
-                audio_path = ydl.prepare_filename(info)
-                
-                if not os.path.exists(audio_path):
-                    raise FileNotFoundError(f"Audio file not found: {audio_path}")
-            
-            # Read file as bytes
-            with open(audio_path, 'rb') as f:
-                audio_bytes = f.read()
-            
-            # Convert to MP3 using AFFmpeg
-            async with AFFmpeg(audio_bytes) as ffmpeg:
-                mp3_bytes = await ffmpeg.to_mp3()
-            
-            # Save MP3 temporarily
-            mp3_path = os.path.join(tempfile.gettempdir(), f"{info['title']}.mp3")
-            with open(mp3_path, 'wb') as f:
-                f.write(mp3_bytes)
-                    
-        except Exception as e:
-            await m.reply(f"❌ Gagal mendownload: {str(e)}")
-            await m.react("❌")
-            if audio_path and os.path.exists(audio_path):
-                os.remove(audio_path)
-            return
                 
         info_text = f"🎵 *Judul:* {title}\n"
         info_text += f"📺 *Channel:* {channel}\n"
@@ -80,19 +33,15 @@ async def execute(client, m, text, **kwargs):
         if views != 'Unknown':
             info_text += f"👁️ *Views:* {views}\n"
         info_text += f"🔗 *Link:* {video_url}"
-        
+                
         await client.send_message(m.chat, info_text, link_preview=True, quoted=m)
         
-        await client.send_audio(m.chat, mp3_path, quoted=m.message)
+        async with https AsyncClient(headers={"X-Api-Key":config.apikeys["nauval"]}) as client:
+            response = client.get(f"https://ytdlpyton.nvlgroup.my.id/download/audio?url={video_url}").json()
         
-        # Cleanup
-        try:
-            if audio_path and os.path.exists(audio_path):
-                os.remove(audio_path)
-            if os.path.exists(mp3_path):
-                os.remove(mp3_path)
-        except:
-            pass  
+        await client.send_audio(m.chat, response["download_url"], quoted=m.message)
+        
+        
         
         await m.react("✅")
         
