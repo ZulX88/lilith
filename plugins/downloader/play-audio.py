@@ -1,7 +1,7 @@
 import os
 import tempfile
 import yt_dlp
-from youtubesearchpython import VideosSearch
+from py_yt import VideoSearch
 from dotenv import load_dotenv
 
 load_dotenv()
@@ -13,7 +13,7 @@ async def execute(client, m, text, **kwargs):
     await m.react("🔍")
     
     try:
-        search = VideosSearch(text, limit=1)
+        search = await VideoSearch(text, limit=1)
         results = search.result()
         
         if not results['result']:
