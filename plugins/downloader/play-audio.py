@@ -4,7 +4,6 @@ import yt_dlp
 from youtubesearchpython import VideosSearch
 from dotenv import load_dotenv
 
-# Load environment variables
 load_dotenv()
 
 async def execute(client, m, text, **kwargs):
@@ -44,22 +43,35 @@ async def execute(client, m, text, **kwargs):
             'audioquality': '0',
             'extractaudio': True,
             'audioformat': 'mp3',
+            'noproxy': True,
         }
         
-        # Check if cookies file exists using environment variable
         cookies_path = os.getenv('YT_COOKIES_PATH', os.path.join('lib', 'cookies.txt'))
         if os.path.exists(cookies_path):
             ydl_opts['cookiefile'] = cookies_path
         
         await m.react("⏳")
         
-        with yt_dlp.YoutubeDL(ydl_opts) as ydl:
-            info = ydl.extract_info(video_url, download=True)
-            audio_path = os.path.join(tempfile.gettempdir(), f"{info['title']}.mp3")
-            
-            if not os.path.exists(audio_path):
-                original_filename = ydl.prepare_filename(info)
-                audio_path = original_filename.rsplit('.', 1)[0] + '.mp3'
+        try:
+            with yt_dlp.YoutubeDL(ydl_opts) as ydl:
+                info = ydl.extract_info(video_url, download=True)
+                audio_path = os.path.join(tempfile.gettempdir(), f"{info['title']}.mp3")
+                
+                if not os.path.exists(audio_path):
+                    original_filename = ydl.prepare_filename(info)
+                    audio_path = original_filename.rsplit('.', 1)[0] + '.mp3'
+        except TypeError as e:
+            if 'proxies' in str(e):
+                ydl_opts.pop('proxy', None)
+                with yt_dlp.YoutubeDL(ydl_opts) as ydl:
+                    info = ydl.extract_info(video_url, download=True)
+                    audio_path = os.path.join(tempfile.gettempdir(), f"{info['title']}.mp3")
+                    
+                    if not os.path.exists(audio_path):
+                        original_filename = ydl.prepare_filename(info)
+                        audio_path = original_filename.rsplit('.', 1)[0] + '.mp3'
+            else:
+                raise e
                 
         info_text = f"🎵 *Judul:* {title}\n"
         info_text += f"📺 *Channel:* {channel}\n"
