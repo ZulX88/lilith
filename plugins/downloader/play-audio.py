@@ -9,7 +9,7 @@ async def execute(client, m, text, **kwargs):
     await m.react("🔍")
     
     try:
-        # Cari video YouTube
+        # 🔹 Cari video YouTube
         search = VideosSearch(text, limit=1)
         results = await search.next()
         
@@ -27,7 +27,7 @@ async def execute(client, m, text, **kwargs):
         
         await m.react("⏳")
         
-        # Buat teks info
+        # 🔹 Buat teks info
         info_text = f"🎵 *Judul:* {title}\n"
         info_text += f"📺 *Channel:* {channel}\n"
         if duration != "Unknown":
@@ -36,11 +36,14 @@ async def execute(client, m, text, **kwargs):
             info_text += f"👁️ *Views:* {views}\n"
         info_text += f"🔗 *Link:* {video_url}"
         
-        # Kirim teks info video
+        # 🔹 Kirim teks info video (tanpa link preview)
         await client.send_message(m.chat, info_text)
         
-        # Ambil link audio dari API Nauval
-        async with httpx.AsyncClient(headers={"X-Api-Key": config.apikeys["nauval"]}) as session:
+        # 🔹 Ambil link audio dari API Nauval
+        async with httpx.AsyncClient(
+            headers={"X-Api-Key": config.apikeys["nauval"]},
+            timeout=60
+        ) as session:
             resp = await session.get(
                 "https://ytdlpyton.nvlgroup.my.id/download/audio",
                 params={"url": video_url, "mode": "url", "bitrate": "128k"},
@@ -49,9 +52,8 @@ async def execute(client, m, text, **kwargs):
             resp.raise_for_status()
             response = resp.json()
         
-        # Kirim audio ke chat
+        # 🔹 Kirim audio ke chat
         await client.send_audio(m.chat, response["download_url"], quoted=m.message)
-        
         await m.react("✅")
         
     except Exception as e:
