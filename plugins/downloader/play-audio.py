@@ -37,7 +37,7 @@ async def execute(client, m, text, **kwargs):
         info_text += f"🔗 *Link:* {video_url}"
         
         # Kirim teks info video
-        await client.send_message(m.chat, info_text, link_preview=True)
+        await client.send_message(m.chat, info_text)
         
         # Ambil link audio dari API Nauval
         async with httpx.AsyncClient(headers={"X-Api-Key": config.apikeys["nauval"]}) as session:
