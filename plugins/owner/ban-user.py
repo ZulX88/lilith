@@ -8,7 +8,6 @@ async def execx(client, m, text, command, **kwargs):
     if not target:
         return await m.reply("*Tag/reply user yang mau dibanned!*")
 
-    # Parse text untuk mendapatkan aksi (ban/unban)
     text_parts = text.split() if text else []
     action = text_parts[0].lower() if text_parts else ""
 
@@ -43,6 +42,7 @@ async def execx(client, m, text, command, **kwargs):
 plugin = {
     "name": "User management",
     "command": "user",
+    "category":"owner",
     "owner": True,
     "exec": execx
 }

@@ -31,6 +31,7 @@ async def execx(client ,m ,text, **kwargs):
 plugin={
     "name":"Mute group",
     "command":"mute",
+    "category":"owner",
     "exec":execx,
     "owner":True
 }

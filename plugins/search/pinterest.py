@@ -35,7 +35,8 @@ async def execx(client,m,text,**kwargs):
     await client.send_carousel(m.chat,container,body=f"Ini kak")
     await m.react("✅")
 plugin={
-    "name":"Pinterest Sesrch",
+    "name":"Pinterest Search",
+    "category":"search",
     "command":"pinterest",
     "alias":["pins","pin-search","pinterest-search","pin-s"],
     "exec":execx

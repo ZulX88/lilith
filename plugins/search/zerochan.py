@@ -15,6 +15,7 @@ async def execx(client ,m,text ,**kwargs):
 
 plugin={
     "name":"Zerochan Search",
+    "category":"search",
     "command":"zerochan",
     "alias":["zero","zerosearch","zerochansearch","zero-s","zs"],
     "exec":execx
