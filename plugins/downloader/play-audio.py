@@ -9,7 +9,6 @@ async def execute(client, m, text, **kwargs):
     await m.react("🔍")
     
     try:
-        # 🔹 Cari video YouTube
         search = VideosSearch(text, limit=1)
         results = await search.next()
         

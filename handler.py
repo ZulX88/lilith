@@ -4,18 +4,22 @@ import traceback
 from datetime import datetime
 from termcolor import colored
 from lib.serialize import Mess
+from lib.database import group_ban ,user_ban, own_bot
 import config
 
 async def handler(client, message):
     try:
         async def check_owner(sender):
             if sender.Server == "s.whatsapp.net":
-                return sender.User in config.owner
+                uid = sender.User
             elif sender.Server == "lid":
                 pn = await client.get_pn_from_lid(sender)
-                return pn.User in config.owner
-            return False
-
+                uid = pn.User
+            else:
+                return False
+        
+            return uid in config.owner or uid in own_bot
+        
         m = Mess(client, message)
         budy = m.text
         
@@ -46,7 +50,8 @@ async def handler(client, message):
           return
         if not is_owner and not is_group:
             return
-
+        if (m.sender.User in user_ban) or (m.sender_alt.User in user_ban):
+            return
         if is_group:
             try:
                 groupMetadata = await client.get_group_info(m.chat)
@@ -58,6 +63,9 @@ async def handler(client, message):
                         isBotAdmin = True
                     if is_admin and isBotAdmin:
                         break
+                
+                if m.chat.User in group_ban and not is_owner:
+                    return
             except:
                 pass
 
