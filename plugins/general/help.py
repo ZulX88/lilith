@@ -1,4 +1,6 @@
 # plugins/general/help.py
+from main import Uptime
+from neonize.proto.waE2E.WAWebProtobufsE2E_pb2 import ContextInfo 
 
 async def execute(client, m, prefix, **kwargs):
     try:
@@ -21,7 +23,7 @@ async def execute(client, m, prefix, **kwargs):
                 continue
             seen.add(main_cmd)
 
-            cat = cmd_data.get("category", "uncategorized").upper()
+            cat = cmd_data.get("category", "misc").upper()
             if cat not in categorized:
                 categorized[cat] = []
             categorized[cat].append(cmd_data)
@@ -57,8 +59,18 @@ async def execute(client, m, prefix, **kwargs):
 
             menu += f"\n━━━━━━━━━━━━━━━━\n"
             menu += f" _Ketik salah satu command di atas ya!_"
-
-        await client.send_image(m.chat, "files/lilith.jpg", caption=menu)
+        with open("files/lilith.jpg","rb") as foto:
+            lilith = foto.read()
+        await client.send_message(m.chat, menu,context_info=ContextInfo(
+            externalAdReply={
+                "title":"Halo kak!",
+                "body":"Uptime : " + Uptime.human(),
+                "thumbnail":lilith,
+                "mediaType":1,
+                "renderLargerThumbnail":True
+            }
+        ))
+        #await client.send_image(m.chat, "files/lilith.jpg", caption=menu)
     except Exception as e:
         await m.reply(f"❌ Error: {str(e)}")
 
