@@ -1,6 +1,7 @@
 beautifulsoup4
 requests
 termcolor
-git+https://github.com/ZulX88/neonize@patch-1
+git+https://github.com/ZhanNexus/neonize@patch-1
 dotenv
 py-yt-search
+aiohttp
