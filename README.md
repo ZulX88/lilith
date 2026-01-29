@@ -278,5 +278,5 @@ Buy me a coffee:
 </div>
 
 <p align="center">
-  Made with ❤️ by <a href="https://github.com/ZulX88">ZulX88</a> | 🤖 Lilith Bot - Your Ultimate WhatsApp Assistant
+  Made with ❤️ by <a href="https://github.com/ZhanNexus">ZhanNexus</a>
 </p>
