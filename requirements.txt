@@ -4,4 +4,7 @@ termcolor
 git+https://github.com/ZhanNexus/neonize@patch-1
 dotenv
 py-yt-search
-aiohttp
+aiosqlite
+sqlalchemy
+watchdog
+ollama

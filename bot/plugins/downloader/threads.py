@@ -1,4 +1,4 @@
-from lib.scrape import threads
+from bot.lib.scrape import threads
 
 async def execute(client, m, text, **kwargs):
   

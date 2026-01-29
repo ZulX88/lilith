@@ -1,4 +1,4 @@
-import aiohttp
+import httpx
 import asyncio
 import re
 import json
@@ -25,15 +25,16 @@ def is_pin(url: str) -> bool:
 
 async def get_cookies() -> Optional[str]:
     try:
-        async with aiohttp.ClientSession() as session:
-            async with session.get('https://www.pinterest.com/csrf_error/') as response:
-                cookies = response.cookies
-                if cookies:
-                    cookie_string = '; '.join(f"{cookie.key}={cookie.value}" for cookie in cookies.values())
-                    return cookie_string
-                else:
-                    print('Warning: No cookies found in the response.')
-                    return None
+        # Pakai httpx.AsyncClient biar cookie otomatis ter-manage
+        async with httpx.AsyncClient(follow_redirects=True) as client:
+            response = await client.get('https://www.pinterest.com/csrf_error/')
+            cookies = response.cookies
+            if cookies:
+                cookie_string = '; '.join(f"{k}={v}" for k, v in cookies.items())
+                return cookie_string
+            else:
+                print('Warning: No cookies found in the response.')
+                return None
     except Exception as error:
         print(f'Error fetching cookies: {error}')
         return None
@@ -52,10 +53,10 @@ async def pindl(pin_url: str) -> Optional[Dict[str, Any]]:
         pin_id = pin_url.split('/pin/')[1].replace('/', '') if '/pin/' in pin_url else None
 
         if not pin_id:
-            async with aiohttp.ClientSession() as session:
-                async with session.get(pin_url, allow_redirects=True) as response:
-                    final_url = str(response.url)
-                    pin_id = final_url.split('/pin/')[1].split('/')[0]
+            async with httpx.AsyncClient(follow_redirects=True) as client:
+                response = await client.get(pin_url)
+                final_url = str(response.url)
+                pin_id = final_url.split('/pin/')[1].split('/')[0]
 
         url = 'https://www.pinterest.com/resource/PinResource/get/'
         params = {
@@ -79,9 +80,9 @@ async def pindl(pin_url: str) -> Optional[Dict[str, Any]]:
             'x-requested-with': 'XMLHttpRequest'
         }
 
-        async with aiohttp.ClientSession() as session:
-            async with session.get(url, headers=headers, params=params) as response:
-                data = await response.json()
+        async with httpx.AsyncClient(follow_redirects=True) as client:
+            response = await client.get(url, headers=headers, params=params)
+            data = response.json()
 
         if not data.get('resource_response', {}).get('data'):
             print('Pin not found or no longer available.')
@@ -147,7 +148,7 @@ async def pinterest(query: str, limit: int = 20) -> List[Dict[str, Any]]:
                     'query': query,
                     'scope': 'pins',
                     'no_fetch_context_on_resource': False,
-                    'page_size': min(limit, 250)  # Pinterest usually max 250 per request
+                    'page_size': min(limit, 250)
                 },
                 'context': {}
             }),
@@ -178,15 +179,14 @@ async def pinterest(query: str, limit: int = 20) -> List[Dict[str, Any]]:
             'x-requested-with': 'XMLHttpRequest'
         }
 
-        async with aiohttp.ClientSession() as session:
-            async with session.get(url, headers=headers, params=params) as response:
-                data = await response.json()
+        async with httpx.AsyncClient(follow_redirects=True) as client:
+            response = await client.get(url, headers=headers, params=params)
+            data = response.json()
 
         container = []
         results = data['resource_response']['data']['results']
         filtered_results = [r for r in results if r.get('images', {}).get('orig')]
         
-        # Apply limit
         limited_results = filtered_results[:limit]
         
         for result in limited_results:
@@ -204,4 +204,3 @@ async def pinterest(query: str, limit: int = 20) -> List[Dict[str, Any]]:
     except Exception as error:
         print(f'Error: {error}')
         return []
-

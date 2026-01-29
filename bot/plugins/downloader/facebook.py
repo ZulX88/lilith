@@ -1,4 +1,4 @@
-from lib.scrape import fesnuk
+from bot.lib.scrape import fesnuk
 
 async def execute(client,m,text,**kwargs):
     try:

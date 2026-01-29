@@ -1,4 +1,4 @@
-from lib.database import user_ban
+from bot.handler import update_user_ban, is_user_banned
 import json
 
 async def execx(client, m, text, command, **kwargs):
@@ -14,31 +14,20 @@ async def execx(client, m, text, command, **kwargs):
 
         pn = await client.get_pn_from_lid(target) if target.Server == "lid" else target
 
-        changed = False
-
         match action:
             case "ban":
-                if pn.User not in user_ban:
-                    user_ban.append(pn.User)
-                    changed = True
-                else:
+                if is_user_banned(pn.User):
                     return await m.reply("*User sudah di-banned sebelumnya!*")
+                update_user_ban(pn.User, "add")
+                await m.reply(f"*Sukses ban user*")
             case "unban":
-                if pn.User in user_ban:
-                    user_ban.remove(pn.User)
-                    changed = True
-                else:
+                if not is_user_banned(pn.User):
                     return await m.reply("*User tidak ada dalam daftar ban!*")
+                update_user_ban(pn.User, "remove")
+                await m.reply(f"*Sukses unban user*")
             case _:
                 return await m.reply("*Opsi invalid! Hanya boleh `ban`/`unban`*")
 
-        if changed:
-            try:
-                with open("database/user_ban.json", "w") as file:
-                    json.dump(user_ban, file, indent=4)
-                await m.reply(f"*Sukses {action} user*")
-            except Exception as e:
-                await m.reply(f"*Gagal menyimpan database: {e}*")
     except Exception as e:
         await m.reply(f"❌ Error: {str(e)}")
 

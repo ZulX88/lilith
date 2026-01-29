@@ -5,12 +5,17 @@ from neonize.proto.waE2E.WAWebProtobufsE2E_pb2 import Message as RawMessage
 from typing import Optional, List, Any
 from neonize.proto.Neonize_pb2 import JID 
 from neonize.utils import build_jid 
+from .msg_store import store as ms
 
 def str_to_jid(jid : str) -> JID:
     return build_jid(
         jid.split("@")[0],
         server=jid.split("@")[1]
     )
+
+async def get_album_id(msg_id:str):
+    album = ms.get_messages(msg_ids=[msg_id])
+    return album[0].album_id if album else None
 
 @dataclass
 class QuotedMess:
@@ -69,6 +74,9 @@ class QuotedMess:
         field_name = msg_fields[0][0].name
         return field_name.replace("Message", "")
         
+    async def album_id(self):
+        return await get_album_id(self.id)
+        
     async def react(self, text: str):
         await self.client.send_message(
             self._chat,
@@ -78,12 +86,8 @@ class QuotedMess:
         )
 
     async def reply(self, text):
-        if not isinstance(text, str):
-            if isinstance(text, (list, tuple)):
-                text = ", ".join(map(str, text))
-            else:
-                text = str(text)
-        return await self.client.reply_message(text, self.message)
+        msg = ms.get_message(self.id)
+        return await self.client.reply_message(text, msg[0].proto)
 
     async def download(self):
         return await self.client.download_any(self.message)
@@ -224,7 +228,10 @@ class Mess:
                     if isinstance(val, str) and val.strip():
                         return val
         return ""
-
+    
+    async def album_id(self):
+        return await get_album_id(self.id)
+    
     async def reply(self, text):
         if not isinstance(text, str):
             if isinstance(text, (list, tuple)):

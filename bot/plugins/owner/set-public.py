@@ -1,4 +1,4 @@
-import config
+import bot.config as config
 
 async def execute(client,m,text,prefix,command,**kwargs):
   try:

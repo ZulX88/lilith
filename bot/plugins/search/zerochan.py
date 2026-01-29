@@ -1,4 +1,4 @@
-from lib.scrape import zero
+from bot.lib.scrape import zero
 
 async def execx(client ,m,text ,**kwargs):
     if not text:

@@ -1,5 +1,6 @@
 from neonize.client import NewClient
-import config
+import bot.config as config
+from neonize.utils.enum import ClientName ,ClientType
 client = NewClient(config.namedb)
 
 number = input("Nomor WA : ")

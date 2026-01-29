@@ -1,4 +1,4 @@
-from lib.database import group_ban
+from bot.handler import update_group_ban, is_group_banned
 import json
 
 async def execx(client ,m ,text, **kwargs):
@@ -9,21 +9,15 @@ async def execx(client ,m ,text, **kwargs):
         user_data = m.chat.User
 
         if text.lower() == "on":
-            if user_data not in group_ban:
-                group_ban.append(user_data)
-
-            with open(f"database/group_ban.json","w") as file:
-                json.dump(group_ban, file, indent=4)
-
+            if is_group_banned(user_data):
+                return await m.reply("*Grup sudah dimute sebelumnya!*")
+            update_group_ban(user_data, "add")
             return await m.reply("*Sukses mute grup!*")
 
         elif text.lower() == "off":
-            if user_data in group_ban:
-                group_ban.remove(user_data)
-
-            with open(f"database/group_ban.json","w") as file:
-                json.dump(group_ban, file, indent=4)
-
+            if not is_group_banned(user_data):
+                return await m.reply("*Grup tidak dalam mode mute!*")
+            update_group_ban(user_data, "remove")
             return await m.reply("*Sukses unmute grup!*")
 
         else:

@@ -5,7 +5,7 @@
 <br>
 
 <div align="center">
-  <img src="files/lilith.jpg" alt="Lilith Logo" width="200" height="200" style="border-radius: 50%; border: 4px solid #000000; box-shadow: 0 0 25px rgba(0, 0, 0, 0.7); margin: 20px 0;"/>
+  <img src="bot/files/lilith.jpg" alt="Lilith Logo" width="200" height="200" style="border-radius: 50%; border: 4px solid #000000; box-shadow: 0 0 25px rgba(0, 0, 0, 0.7); margin: 20px 0;"/>
 </div>
 
 <h1 align="center">🤖 Lilith - WhatsApp Bot </h1>
@@ -115,7 +115,7 @@ Lilith is an advanced WhatsApp bot meticulously crafted with Python and asynchro
 
 5. **Run the Bot**
    ```bash
-   python3 -m main
+   python3 -m bot
    ```
 
 > ⚠️ **Note**: Follow the instructions that appear during session generation to connect with your WhatsApp.
@@ -127,10 +127,13 @@ Lilith is an advanced WhatsApp bot meticulously crafted with Python and asynchro
 ### Environment Variables
 
 ```env
-PREFIXES=/
-NAMEDB=db.sqlite3
-OWNER=62xxx,84xxx
-BOT_NAME=Lilith Bot
+PREFIXES=/,.,! #Prefix for bot
+NAMEDB=db.sqlite3 # Name database file, can use postgresql. Just add postgresql link
+OWNER=62xxx,84xxx # Owner bot
+BOT_NAME=Shiro Bot # Name bot
+NAUVAL_APIKEY=xxxxxxxxx #Nauval ytdl apikey
+GITHUB_TOKEN=gh_patxxxxxxx # GitHub PAT
+OLLAMA_APIKEY=xxxxx # AI Ollama Cloud
 ```
 
 <div align="center">
@@ -150,19 +153,20 @@ BOT_NAME=Lilith Bot
 
 ```
 lilith/
-├── main.py                # 🖥️  Main bot entry point
-├── gen.py                 # 🔐  Session generation script  
-├── handler.py             # 🤖  Message handler
-├── config.py              # ⚙️  Configuration settings
-├── requirements.txt       # 📦  Python dependencies
-├── .env.example          # 🔐  Environment variables template
-├── files/                # 📁  Static files directory
-├── lib/                  # 🧩  Core library modules
-│   ├── serialize.py      # 📬  Message serialization
-│   └── scrape/           # 🌐  Scraping utilities
-└── plugins/              # 🔌  Bot plugins directory
-    ├── downloader/       # 📥  Download plugins
-    └── general/          # 🧩  General plugins
+├── bot/                  # 🤖 Core Package
+│   ├── __init__.py       # 🧩 Package initializer
+│   ├── __main__.py      # 🖥️ Main bot entry point
+│   ├── handler.py        # 🤖 Message handler
+│   ├── config.py         # ⚙️ Configuration settings
+│   ├── lib/              # 🧩 Core library modules
+│   │   ├── func.py       # 🛠️ Function
+│   │   ├── serialize.py  # 📬 Message serialization
+│   │   └── msg_store.py  # 📦 Database store logic
+│   ├── database/             # 📁 Database & JSON Storage
+│   └── plugins/          # 🔌 Bot plugins directory 
+├── .env                  # 🔐 Environment variables
+├── requirements.txt      # 📦 Python dependencies
+└── gen.py                # 🔐 Session generation script
 ```
 
 
@@ -176,8 +180,8 @@ lilith/
 |----------------|---------------|--------|
 | 📥 **Downloader** | Media download capabilities | ✅ Active |
 | 🧩 **General** | Basic bot commands | ✅ Active |
-| 🎵 **Music** | Music search and download | 🔄 Coming Soon |
-| 🤖 **AI** | Artificial intelligence features | 🔄 Coming Soon |
+| 🎵 **Music** | Music search and download | ✅ Active |
+| 🤖 **AI** | Artificial intelligence features | ✅ Active |
 
 </div>
 

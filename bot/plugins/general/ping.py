@@ -14,7 +14,7 @@ async def execute(client, m, **kwargs):
 plugin = {
     "command": "ping",
     "name": "Ping Bot",
-    "category": "misc",
+    "category": "general",
     "alias": ["ngap"],
     "exec": execute
 }

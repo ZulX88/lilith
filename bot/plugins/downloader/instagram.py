@@ -1,4 +1,4 @@
-from lib.scrape import instagram
+from bot.lib.scrape import instagram
 
 async def execute(client ,m,text,**kwargs):
     try:

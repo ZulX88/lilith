@@ -21,7 +21,7 @@ async def execute(client, m, **kwargs):
 
 
 plugin = {
-    "category":"misc",
+    "category":"general",
     "name": "sticker",
     "command": "sticker",
     "alias": ["s", "stiker", "stc"],

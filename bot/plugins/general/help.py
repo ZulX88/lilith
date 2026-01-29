@@ -1,10 +1,9 @@
-# plugins/general/help.py
-from main import Uptime
+from bot import Uptime
 from neonize.proto.waE2E.WAWebProtobufsE2E_pb2 import ContextInfo 
 
 async def execute(client, m, prefix, **kwargs):
     try:
-        if kwargs.get("command") not in ["help", "menu", "bantu", "list"]:
+        if kwargs.get("command") not in ["help", "menu", "cmd"]:
             return False
 
         try:
@@ -59,7 +58,7 @@ async def execute(client, m, prefix, **kwargs):
 
             menu += f"\n━━━━━━━━━━━━━━━━\n"
             menu += f" _Ketik salah satu command di atas ya!_"
-        with open("files/lilith.jpg","rb") as foto:
+        with open("bot/files/lilith.jpg","rb") as foto:
             lilith = foto.read()
         await client.send_message(m.chat, menu,context_info=ContextInfo(
             externalAdReply={

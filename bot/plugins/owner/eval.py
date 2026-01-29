@@ -1,5 +1,6 @@
 from neonize.aioze.client import NewAClient 
-from lib.serialize import Mess 
+from bot.lib.serialize import Mess 
+from bot.lib.msg_store import store 
 import sys
 import io
 import traceback
@@ -7,10 +8,10 @@ import os
 from neonize.proto.waE2E.WAWebProtobufsE2E_pb2 import Message
 from typing import Any
 
-async def aexec(code: str, client: NewAClient, m: Mess) -> Any:
+async def aexec(code: str, client: NewAClient, m: Mess,store:store) -> Any:
     local_namespace = {}
     func_code = f"""
-async def __eval_exec(client, m):
+async def __eval_exec(client, m, store):
 {chr(10).join(f'    {line}' for line in code.splitlines())}
 """
 
@@ -25,10 +26,10 @@ async def __eval_exec(client, m):
     if not eval_func:
         raise RuntimeError("Failed to compile code into a function.")
 
-    return await eval_func(client, m)
+    return await eval_func(client, m,store)
 
 
-async def eval_message(m: Mess, cmd: str, client: NewAClient):
+async def eval_message(m: Mess, cmd: str, client: NewAClient,store:store):
     status_msg_info = None
     temp_file_name = "neonize_eval_output.txt"
 
@@ -51,7 +52,7 @@ async def eval_message(m: Mess, cmd: str, client: NewAClient):
         execution_result = None
 
         try:
-            execution_result = await aexec(cmd, client, m)
+            execution_result = await aexec(cmd, client, m,store)
         except Exception as e:
             exception_data = traceback.format_exc()
 
@@ -136,7 +137,7 @@ async def eval_message(m: Mess, cmd: str, client: NewAClient):
         except:
             pass
           
-async def execute(client,m,is_owner,text,body,**kwargs):
+async def execute(client,m,is_owner,text,body,store,**kwargs):
     if body.startswith("×>"):
         if not is_owner:
             await client.send_message(m.chat, "❌ Only owner can use eval!")
@@ -146,7 +147,7 @@ async def execute(client,m,is_owner,text,body,**kwargs):
             await client.send_message(m.chat, "❌ Please provide code to evaluate. Usage: `=> print('Hello')`")
             return
         try:
-            await eval_message(m, cmd, client)
+            await eval_message(m, cmd, client,store)
         except Exception as e:
             error_trace = traceback.format_exc()
             print(f"[Eval Handler Error] {e}\n{error_trace}")
